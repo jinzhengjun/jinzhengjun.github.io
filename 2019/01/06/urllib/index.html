@@ -6,15 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://jinzhengjun.github.io.git">
-  <title>Archives: 2019/1 | Hexo</title>
+  <title>urllib | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://jinzhengjun.github.io.git/archives/2019/01/index.html">
+  <meta name="description" content="一、爬虫的学习学习爬虫需要一个过程，没有过程容易出错。所以我准备制定一个学习计划  urllib requests bs4 scrapy pyspider  二、urlliburllib是Python的标准库，基本上涵盖了基础的网络请求功能  2.1 urllib.requesturllib中,request这个模块主要负责构建和发起网络请求，并在其中加入Headers、Proxy等 2.1.1">
+<meta name="keywords" content="python爬虫">
+<meta property="og:type" content="article">
+<meta property="og:title" content="urllib">
+<meta property="og:url" content="http://jinzhengjun.github.io.git/2019/01/06/urllib/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="一、爬虫的学习学习爬虫需要一个过程，没有过程容易出错。所以我准备制定一个学习计划  urllib requests bs4 scrapy pyspider  二、urlliburllib是Python的标准库，基本上涵盖了基础的网络请求功能  2.1 urllib.requesturllib中,request这个模块主要负责构建和发起网络请求，并在其中加入Headers、Proxy等 2.1.1">
 <meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-01-06T15:27:25.491Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo">
+<meta name="twitter:title" content="urllib">
+<meta name="twitter:description" content="一、爬虫的学习学习爬虫需要一个过程，没有过程容易出错。所以我准备制定一个学习计划  urllib requests bs4 scrapy pyspider  二、urlliburllib是Python的标准库，基本上涵盖了基础的网络请求功能  2.1 urllib.requesturllib中,request这个模块主要负责构建和发起网络请求，并在其中加入Headers、Proxy等 2.1.1">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -146,36 +151,119 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-urllib" class="article article-type-post " itemscope="" itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2019" class="archive-year">2019</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/01/06/urllib/" class="archive-article-date">
-  	<time datetime="2019-01-06T15:24:44.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-01-06</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/01/06/urllib/">urllib</a>
+    <h1 class="article-title" itemprop="name">
+      urllib
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/2019/01/06/urllib/" class="archive-article-date">
+  	<time datetime="2019-01-06T15:24:44.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-01-06</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="一、爬虫的学习"><a href="#一、爬虫的学习" class="headerlink" title="一、爬虫的学习"></a>一、爬虫的学习</h3><p>学习爬虫需要一个过程，没有过程容易出错。所以我准备制定一个学习计划</p>
+<ol>
+<li>urllib</li>
+<li>requests</li>
+<li>bs4</li>
+<li>scrapy</li>
+<li>pyspider</li>
+</ol>
+<h3 id="二、urllib"><a href="#二、urllib" class="headerlink" title="二、urllib"></a>二、urllib</h3><p>urllib是Python的标准库，基本上涵盖了基础的网络请求功能</p>
+<hr>
+<h4 id="2-1-urllib-request"><a href="#2-1-urllib-request" class="headerlink" title="2.1 urllib.request"></a>2.1 urllib.request</h4><p>urllib中,request这个模块主要负责构建和发起网络请求，并在其中加入Headers、Proxy等</p>
+<h4 id="2-1-1-发起GET请求"><a href="#2-1-1-发起GET请求" class="headerlink" title="2.1.1 发起GET请求"></a>2.1.1 发起GET请求</h4><p>主要使用urlopen()方法来发起请求</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">from urllib import request</span><br><span class="line"></span><br><span class="line">resp = request.urlopen(&quot;http://www.shuqi.com/&quot;)</span><br><span class="line">print(resp.read().decode())</span><br></pre></td></tr></table></figure>
+<p>访问的结果是一个http.client.HTTPresponse对象，使用此对象的read()方法，则可以获取访问网页获得的数据。但是要注意的是，获得的数据会是bytes的二进制格式，所以需要decode()一下，转换成字符串格式。</p>
+<h4 id="2-1-2-发起POST请求"><a href="#2-1-2-发起POST请求" class="headerlink" title="2.1.2 发起POST请求"></a>2.1.2 发起POST请求</h4><p>urlopen()默认的访问方式是GET，当在urlopen()方法中传入data参数时，则会发起POST请求。 <strong>注意：传递的data数据需要为bytes格式</strong></p>
+<p>在参数中还可以设置timeout参数还可以设置超时时间，如果请求时间超出，那么就会跑出异常。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">from urllib import request</span><br><span class="line"></span><br><span class="line">response = request.urlopen(url,data = b&apos;word=hello,timeout = 10)</span><br><span class="line"></span><br><span class="line">print(resp.read().decode())</span><br></pre></td></tr></table></figure>
+<h4 id="2-1-3-添加Headers"><a href="#2-1-3-添加Headers" class="headerlink" title="2.1.3 添加Headers"></a>2.1.3 添加Headers</h4><p>通过urllib发起的请求会有默认的一个Headers:”User-Agent”:”python-urllib/3.0”,指明请求是由urllib发送的。</p>
+<p>所以遇到一些验证User-Agent的网站时，我们需要自定义Headers,而这需要借助于urllib.requset中的Requset对象</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">from urllib import request</span><br><span class="line"></span><br><span class="line">url = &quot;&quot;</span><br><span class="line">headers = &#123;&quot;User-Agent&quot;:&quot;Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36&quot;&#125;</span><br><span class="line"></span><br><span class="line">response = request.Request(url,headers = headers)</span><br><span class="line">resp = request.urlopen(response)</span><br><span class="line">print(resp.read().decode())</span><br></pre></td></tr></table></figure>
+<h4 id="2-1-4-Request对象"><a href="#2-1-4-Request对象" class="headerlink" title="2.1.4 Request对象"></a>2.1.4 Request对象</h4><p>urlopen()方法不仅可以传入字符串格式的url,也可也传入一个Request对象来扩展功能，Request对象如下所示。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">class urllib.request.Request(url, data=None, headers=&#123;&#125;,</span><br><span class="line">                             origin_req_host=None,</span><br><span class="line">                             unverifiable=False, method=None)</span><br></pre></td></tr></table></figure>
+<p>构造Request对象必须传入url参数，data数据和headers都是可选的。</p>
+<p>最后，Request方法可以使用method参数来自由选择请求的方法，如PUT，DELETE等等，默认为GET。</p>
+<h4 id="2-1-5-下载数据到本地"><a href="#2-1-5-下载数据到本地" class="headerlink" title="2.1.5 下载数据到本地"></a>2.1.5 下载数据到本地</h4><p>在我们进行网络请求时常常需要保存图片或音频等数据到本地，一种方法是使用python 的文件操作，将read()获取的数据保存到文件中。</p>
+<p>而urllib提供了一个urlretrieve()方法，可以简单的直接将请求数据保存成文件。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">from urllib import request</span><br><span class="line"></span><br><span class="line">url = &quot;http://www.shuqi.com/&quot;</span><br><span class="line">request.urlretrieve(url,&quot;shuqi.html&quot;)</span><br></pre></td></tr></table></figure></p>
+<p>urlretrieve()方法传入的第二个参数为文件保存的位置，以及文件名</p>
+<hr>
+<h3 id="二、urllib-response"><a href="#二、urllib-response" class="headerlink" title="二、urllib.response"></a>二、urllib.response</h3><p>在使用urlopen()方法或者opener的open()方法发起请求后，获得的结果是一个response对象。</p>
+<p>这个对象有一些方法和属性，可以让我们对请求返回的结果进行一些处理</p>
+<ul>
+<li>read()</li>
+</ul>
+<p>获取响应返回的数据，只能使用一次</p>
+<ul>
+<li>getcode()</li>
+</ul>
+<p>获取服务器返回的状态码</p>
+<ul>
+<li>getheaders()</li>
+</ul>
+<p>获取返回响应的响应头部</p>
+<ul>
+<li>geturl()</li>
+</ul>
+<p>获取访问的url</p>
+<hr>
+<h3 id="三、urllib-parse"><a href="#三、urllib-parse" class="headerlink" title="三、urllib.parse"></a>三、urllib.parse</h3><p>urllib.parse是urllib中用来解析各种数据格式的模块</p>
+<h4 id="3-1-urllib-parse-quote"><a href="#3-1-urllib-parse-quote" class="headerlink" title="3.1 urllib.parse.quote"></a>3.1 urllib.parse.quote</h4><p>在url中，是只能使用ASCLL中包含的字符的，也就是说，ASCLL不包含的特殊字符，以及中文等字符都是不可以在url中使用的。而我们有时候又有将中文字符加入到url中的需要，例如百度搜索地址。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https://www.baidu.com/s?wd=黑洞</span><br></pre></td></tr></table></figure>
+<p>?号之后的wd参数，则是我们搜索的关键词。那么我们事先的方法就是讲特殊字符进行url编码,转换成可以url可以传输的格式，urllib中可以使用quote()方法来实现2做这个功能。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">from urllib import parse</span><br><span class="line">key = &quot;黑洞&quot;</span><br><span class="line">d = parse.quote(key)</span><br><span class="line">print(d)</span><br><span class="line"></span><br><span class="line">%E9%BB%91%E6%B4%9E</span><br></pre></td></tr></table></figure>
+<p>有编码就有解码，如果需要将编码后的数据转换回来，可以使用unquote()方法</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">d = parse.unquote(key)</span><br><span class="line">print(d)</span><br><span class="line"></span><br><span class="line">黑洞</span><br></pre></td></tr></table></figure>
+<h4 id="3-2-urllib-parse-urlencode"><a href="#3-2-urllib-parse-urlencode" class="headerlink" title="3.2 urllib.parse.urlencode"></a>3.2 urllib.parse.urlencode</h4><p>在访问url时，我们常常需要传递很多的url参数，而如果用字符串的方法去拼接url的话，会比较麻烦，所以urllib中提供了urlencode这个方法来拼接url参数。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">from urllib import parse</span><br><span class="line">params = &#123;&apos;wd&apos;:&apos;黑洞&apos;,&apos;code&apos;:&apos;1&apos;&#125;</span><br><span class="line">parse.urlencode(params)</span><br><span class="line"></span><br><span class="line">&apos;wd=%E9%BB%91%E6%B4%9E&amp;code=1&apos;</span><br></pre></td></tr></table></figure>
+<h4 id="3-3-urllib-error"><a href="#3-3-urllib-error" class="headerlink" title="3.3 urllib.error"></a>3.3 urllib.error</h4><p>在urllib中主要设置了两个异常，一个是URLError,一个是HTTPError,HTTError是URLError的子类</p>
+<p>HTTPError 还包含了三个属性：</p>
+<ul>
+<li>code: 请求的状态码</li>
+<li>reason：错误的原因</li>
+<li>headers: 响应的报头</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">from urllib.error import HTTPError</span><br><span class="line">from urllib import request</span><br><span class="line">try:</span><br><span class="line">    request.urlopen(&quot;https://www.jianshu.com&quot;)</span><br><span class="line">except HTTPError as e:</span><br><span class="line">    print(e.code)</span><br><span class="line">    </span><br><span class="line">403</span><br></pre></td></tr></table></figure>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -187,19 +275,96 @@
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://jinzhengjun.github.io.git/2019/01/06/urllib/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
-  
-  
-    </div></section>
+
   
 
-    
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+  
+  
+  
+
+  
+
+  
+
+  
 
 
           </div>
@@ -222,8 +387,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
